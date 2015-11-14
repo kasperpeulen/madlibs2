@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="madlibs2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,193 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="lp1-jn-bdM">
+                                <rect key="frame" x="130" y="74" width="340" height="452"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="madlibs" translatesAutoresizingMaskIntoConstraints="NO" id="8hb-yT-HmY">
+                                        <rect key="frame" x="29" y="0.0" width="282" height="250"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="YBG-eQ-MtS"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pax-JZ-YuQ">
+                                        <rect key="frame" x="0.0" y="280" width="340" height="100"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="NnA-dP-vSA"/>
+                                            <constraint firstAttribute="width" constant="340" id="S6t-iQ-ihF"/>
+                                        </constraints>
+                                        <string key="text">Welcome to Mad Libs! I will ask you to fill in words to complete a story. You won't be able to see the whole story until you are done filling in the missing words. That is part of the fun! Click below to get started...</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1G-2a-Jnk">
+                                        <rect key="frame" x="84.5" y="410" width="171" height="42"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="GET STARTED!"/>
+                                        <connections>
+                                            <segue destination="Mmc-gs-Taf" kind="show" id="q3W-ct-W8C"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                            </stackView>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lp1-jn-bdM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mYV-Ln-UAX"/>
+                            <constraint firstItem="lp1-jn-bdM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uet-4i-ZgG"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="356"/>
+        </scene>
+        <!--Input VarsVC-->
+        <scene sceneID="n4j-xz-QDX">
+            <objects>
+                <viewController id="Mmc-gs-Taf" customClass="InputVarsVC" customModule="madlibs2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mG9-qx-2SQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ebu-iH-g90"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oXr-Rd-Swi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill in the words to complete the story!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fb-Wo-hxm">
+                                <rect key="frame" x="20" y="20" width="560" height="93.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 word(s) left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIK-83-E5E">
+                                <rect key="frame" x="234" y="128.5" width="132" height="20.5"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="mvO-BE-Nde"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7Ym-Hs-ZPQ">
+                                <rect key="frame" x="199" y="169" width="203" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="please type a noun" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GqJ-ra-SVk">
+                                        <rect key="frame" x="0.0" y="0.0" width="143" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJG-pB-pI2">
+                                        <rect key="frame" x="173" y="0.0" width="30" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="OK"/>
+                                        <connections>
+                                            <action selector="okAction:" destination="Mmc-gs-Taf" eventType="touchUpInside" id="om8-lK-XJy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                            </stackView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULW-6F-ZWk">
+                                <rect key="frame" x="157" y="233" width="287" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="287" id="MAk-Pm-CzU"/>
+                                    <constraint firstAttribute="height" constant="30" id="UXl-PO-C0i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                <state key="normal" title="Generate Mad Story"/>
+                                <connections>
+                                    <segue destination="aip-hQ-gh3" kind="show" id="juF-i3-R0q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5fb-Wo-hxm" firstAttribute="top" secondItem="mG9-qx-2SQ" secondAttribute="bottom" id="1HE-vS-xAJ"/>
+                            <constraint firstItem="7Ym-Hs-ZPQ" firstAttribute="centerX" secondItem="oXr-Rd-Swi" secondAttribute="centerX" id="48f-KS-weH"/>
+                            <constraint firstItem="ULW-6F-ZWk" firstAttribute="centerX" secondItem="oXr-Rd-Swi" secondAttribute="centerX" id="81C-kX-old"/>
+                            <constraint firstItem="7Ym-Hs-ZPQ" firstAttribute="top" secondItem="ZIK-83-E5E" secondAttribute="bottom" constant="20" id="8VK-MU-1lK"/>
+                            <constraint firstItem="ZIK-83-E5E" firstAttribute="top" secondItem="5fb-Wo-hxm" secondAttribute="bottom" constant="15" id="9g4-hI-5XH"/>
+                            <constraint firstItem="5fb-Wo-hxm" firstAttribute="leading" secondItem="oXr-Rd-Swi" secondAttribute="leadingMargin" id="Lme-FO-S5v"/>
+                            <constraint firstItem="ULW-6F-ZWk" firstAttribute="top" secondItem="7Ym-Hs-ZPQ" secondAttribute="bottom" constant="34" id="Qdw-mF-ntb"/>
+                            <constraint firstItem="ZIK-83-E5E" firstAttribute="centerX" secondItem="oXr-Rd-Swi" secondAttribute="centerX" id="lfK-VX-R7M"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5fb-Wo-hxm" secondAttribute="trailing" id="px6-lc-vWg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="generateButton" destination="ULW-6F-ZWk" id="slH-9i-36E"/>
+                        <outlet property="okButton" destination="mJG-pB-pI2" id="UZK-JB-m8w"/>
+                        <outlet property="wordCounter" destination="ZIK-83-E5E" id="wtS-Si-9vB"/>
+                        <outlet property="wordInput" destination="GqJ-ra-SVk" id="Tgm-7E-bFN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uXw-Un-0fN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="952" y="359"/>
+        </scene>
+        <!--StoryVC-->
+        <scene sceneID="3g3-GI-WlE">
+            <objects>
+                <viewController id="aip-hQ-gh3" customClass="StoryVC" customModule="madlibs2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bu8-d5-272"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cpm-0M-j1b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nql-qS-Kr3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Frz-oA-xhi">
+                                <rect key="frame" x="20" y="20" width="560" height="363.5"/>
+                                <animations/>
+                                <mutableString key="text">One of the most &lt;adjective&gt; characters in fiction is named "Tarzan of the &lt;plural-noun&gt; ." Tarzan was raised by a/an &lt;noun&gt; and lives in the &lt;adjective&gt; jungle in the heart of darkest &lt;place&gt; . He spends most of his time eating &lt;plural-noun&gt; and swinging from tree to &lt;noun&gt;. Whenever he gets angry, he beats on his chest and says, " &lt;funny-noise&gt; !" This is his war cry. Tarzan always dresses in &lt;adjective&gt; shorts made from the skin of a/an &lt;noun&gt; and his best friend is a/an &lt;adjective&gt; chimpanzee named Cheetah. He is supposed to be able to speak to elephants and &lt;plural-noun&gt;. In the movies, Tarzan is played by &lt;person's-name&gt; .</mutableString>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="27"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Frz-oA-xhi" firstAttribute="top" secondItem="Bu8-d5-272" secondAttribute="bottom" constant="20" id="GJ8-Tq-zzk">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="Frz-oA-xhi" firstAttribute="leading" secondItem="Nql-qS-Kr3" secondAttribute="leadingMargin" constant="20" id="J47-6W-sKs">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="Frz-oA-xhi" secondAttribute="trailing" constant="20" id="rNN-Dn-kJh">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="storyLabel" destination="Frz-oA-xhi" id="1QQ-p4-LBV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="70E-hE-fyC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1681" y="356"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="madlibs" width="282" height="308"/>
+    </resources>
 </document>
